@@ -42,9 +42,7 @@ program CGI.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pkglibdir},%{_sysconfdir}/httpd.conf}
 
-libtool --mode=install install src/libmod_%{mod_name}.la $RPM_BUILD_ROOT%{_pkglibdir}
-mv $RPM_BUILD_ROOT%{_pkglibdir}/libmod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}/mod_%{mod_name}.so
-
+install src/.libs/libmod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf/61_mod_transform.conf
 
 %clean
@@ -64,5 +62,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
+%doc TODO
 %attr(755,root,root) %{_pkglibdir}/*
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/httpd.conf/*.conf
