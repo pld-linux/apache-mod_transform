@@ -9,7 +9,7 @@ License:	GPL v2+
 Group:		Networking/Daemons
 Source0:	http://www.outoforder.cc/downloads/mod_transform/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	a41ea16eeefb9b798186153b154a1219
-Source1:	mod_%{mod_name}.conf
+Source1:	%{name}.conf
 URL:	http://www.outoforder.cc/projects/apache/mod_transform/
 BuildRequires:	%{apxs}
 BuildRequires:	libxml2-devel
