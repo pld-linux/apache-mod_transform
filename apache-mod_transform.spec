@@ -18,7 +18,7 @@ Requires(post,preun):	%{apxs}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_pkglibdir	%(%{apxs} -q LIBEXECDIR)
-%define		_sysconfdir	/etc/httpd
+%define		_sysconfdir	%(%{apxs} -q SYSCONFDIR)
 
 %description
 mod_transform is a filter module that allows Apache 2.0 to do dynamic
