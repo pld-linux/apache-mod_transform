@@ -12,6 +12,7 @@ Source0:	http://www.outoforder.cc/downloads/mod_transform/mod_%{mod_name}-%{vers
 Source1:	%{name}.conf
 URL:		http://www.outoforder.cc/projects/apache/mod_transform/
 BuildRequires:	%{apxs}
+BuildRequires:	apache >= 2.0.40
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
