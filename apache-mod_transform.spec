@@ -12,8 +12,8 @@ Source0:	http://www.outoforder.cc/downloads/mod_transform/mod_%{mod_name}-%{vers
 Source1:	mod_%{mod_name}.conf
 URL:	http://www.outoforder.cc/projects/apache/mod_transform/
 BuildRequires:	%{apxs}
-BuildRequires:	libxslt-devel
 BuildRequires:	libxml2-devel
+BuildRequires:	libxslt-devel
 Requires(post,preun):	%{apxs}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -21,9 +21,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sysconfdir	/etc/httpd
 
 %description
-mod_transform is a filter module that allows Apache 2.0 to do dynamic XSL
-Transformations on either static XML documents, or XML documents generated
-from another Apache module or CGI program.
+mod_transform is a filter module that allows Apache 2.0 to do dynamic
+XSL Transformations on either static XML documents, or XML documents
+generated from another Apache module or CGI program.
+
+%description -l pl
+mod_transform to modu³ filtra umo¿liwiaj±cy serwerowi Apache 2.0
+wykonywaæ dynamiczne przekszta³cenia XML na statycznych dokumentach
+XML lub dokumentach XML generowanych przez inny modu³ Apache'a lub
+program CGI.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
@@ -38,7 +44,6 @@ install -d $RPM_BUILD_ROOT{%{_pkglibdir},%{_sysconfdir}/httpd.conf}
 
 libtool --mode=install install src/libmod_%{mod_name}.la $RPM_BUILD_ROOT%{_pkglibdir}
 mv $RPM_BUILD_ROOT%{_pkglibdir}/libmod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}/mod_%{mod_name}.so
-#%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf/61_mod_transform.conf
 
