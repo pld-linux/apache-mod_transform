@@ -4,7 +4,7 @@ Summary:	Module to serve XML based content
 Summary(pl):	Modu³ do udostêpniania dokumentów XML
 Name:		apache-mod_%{mod_name}
 Version:	0.4.0
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Networking/Daemons
 Source0:	http://www.outoforder.cc/downloads/mod_transform/mod_%{mod_name}-%{version}.tar.gz
@@ -18,11 +18,12 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-devel
-Requires(post,preun):	%{apxs}
+BuildRequires:	sed >= 4.0
+Requires:	apache(modules-api) = %apache_modules_api
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_pkglibdir	%(%{apxs} -q LIBEXECDIR)
-%define		_sysconfdir	%(%{apxs} -q SYSCONFDIR)
+%define		_pkglibdir	%(%{apxs} -q LIBEXECDIR 2>/dev/null)
+%define		_sysconfdir	%(%{apxs} -q SYSCONFDIR 2>/dev/null)
 
 %description
 mod_transform is a filter module that allows Apache 2.0 to do dynamic
@@ -37,10 +38,10 @@ program CGI.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
+sed -i -e "s:apr-config:apr-1-config:g" aclocal.m4 m4/apache.m4
+sed -i -e "s:apu-config:apu-1-config:g" aclocal.m4 m4/apache.m4
 
 %build
-%{__perl} -pi -e "s:apr-config:apr-1-config:g" aclocal.m4 m4/apache.m4
-%{__perl} -pi -e "s:apu-config:apu-1-config:g" aclocal.m4 m4/apache.m4
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
