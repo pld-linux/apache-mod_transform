@@ -1,7 +1,7 @@
 %define		mod_name	transform
 %define 	apxs		/usr/sbin/apxs
 Summary:	Module to serve XML based content
-Summary(pl.UTF-8):   Moduł do udostępniania dokumentów XML
+Summary(pl.UTF-8):	Moduł do udostępniania dokumentów XML
 Name:		apache-mod_%{mod_name}
 Version:	0.4.0
 Release:	4
