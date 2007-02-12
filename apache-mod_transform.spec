@@ -1,7 +1,7 @@
 %define		mod_name	transform
 %define 	apxs		/usr/sbin/apxs
 Summary:	Module to serve XML based content
-Summary(pl):	Modu³ do udostêpniania dokumentów XML
+Summary(pl.UTF-8):   ModuÅ‚ do udostÄ™pniania dokumentÃ³w XML
 Name:		apache-mod_%{mod_name}
 Version:	0.4.0
 Release:	4
@@ -31,10 +31,10 @@ mod_transform is a filter module that allows Apache 2.0 to do dynamic
 XSL Transformations on either static XML documents, or XML documents
 generated from another Apache module or CGI program.
 
-%description -l pl
-mod_transform to modu³ filtra umo¿liwiaj±cy serwerowi Apache 2.0
-wykonywaæ dynamiczne przekszta³cenia XML na statycznych dokumentach
-XML lub dokumentach XML generowanych przez inny modu³ Apache'a lub
+%description -l pl.UTF-8
+mod_transform to moduÅ‚ filtra umoÅ¼liwiajÄ…cy serwerowi Apache 2.0
+wykonywaÄ‡ dynamiczne przeksztaÅ‚cenia XML na statycznych dokumentach
+XML lub dokumentach XML generowanych przez inny moduÅ‚ Apache'a lub
 program CGI.
 
 %prep
