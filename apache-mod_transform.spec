@@ -6,7 +6,7 @@ Name:		apache-mod_%{mod_name}
 Version:	0.4.0
 Release:	4
 License:	GPL v2+
-Group:		Networking/Daemons
+Group:		Networking/Daemons/HTTP
 Source0:	http://www.outoforder.cc/downloads/mod_transform/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	a41ea16eeefb9b798186153b154a1219
 Source1:	%{name}.conf
