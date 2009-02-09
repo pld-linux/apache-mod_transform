@@ -3,12 +3,12 @@
 Summary:	Module to serve XML based content
 Summary(pl.UTF-8):	Moduł do udostępniania dokumentów XML
 Name:		apache-mod_%{mod_name}
-Version:	0.4.0
-Release:	4
+Version:	0.6.0
+Release:	1
 License:	GPL v2+
 Group:		Networking/Daemons/HTTP
 Source0:	http://www.outoforder.cc/downloads/mod_transform/mod_%{mod_name}-%{version}.tar.gz
-# Source0-md5:	a41ea16eeefb9b798186153b154a1219
+# Source0-md5:	8b27adea2536f105470b4bedc418ab3b
 Source1:	%{name}.conf
 URL:		http://www.outoforder.cc/projects/apache/mod_transform/
 BuildRequires:	%{apxs}
